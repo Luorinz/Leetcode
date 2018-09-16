@@ -25,6 +25,7 @@ class Solution:
         """
 
         #My solution
+        #beat 25.40%
         num1 = 0
         num2 = 0
         num3 = 0
