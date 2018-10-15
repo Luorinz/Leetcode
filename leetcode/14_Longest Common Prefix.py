@@ -21,35 +21,29 @@ class Solution:
         :type strs: List[str]
         :rtype: str
         """
-        # My solution
-
         if not strs:
             return ""
-        
-        length = len(strs)
-        if length == 1 :
-            return strs[0]
-
-        temp = strs[0]
-        i = 1
-        while i < length:
-            for k in range(len(strs[i])):
-                if k< len(temp):
-                    if strs[i][k] != temp[k] :
-                        temp =temp[:k]
-                else:
-                    temp = temp[:k]
-            i+=1
-        return temp
-
-
-
-
-
-   
-                
-
-
+        ind = 0
+        res = ""
+        temp = ""
+        is_start = False
+        try:
+            while True:
+                for i in strs:
+                    if is_start == False:
+                        is_start = True
+                        temp = i[ind]
+                    else:
+                        if temp != i[ind]:
+                            return res
+                ind+=1
+                res += temp
+                temp = ""
+                is_start = False
+        except IndexError:
+            return res        
+        return res     
+      
 
 test = Solution()
 print(test.longestCommonPrefix(["aa","a"]))
