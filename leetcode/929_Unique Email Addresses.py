@@ -48,4 +48,4 @@ class Solution:
                     temp += j
             temp += email[1]
             s.add(temp)
-        return len(s)
+        return len(s) 
