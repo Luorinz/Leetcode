@@ -2,3 +2,4 @@
 *.json
 .DS_Store
 leetcode/.DS_Store
+leetcode/test.py

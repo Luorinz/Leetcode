@@ -47,7 +47,14 @@ class Solution:
             # Caution: Never use tuple exchange in a list!!!
             # nums[i] > 0 means don't have to take action to negative
             # nums[i] <= len(nums) means the num isn't out of range
-            # nums[i] != nums[nums[i]-1] means the num isn't in the right place
+            # nums[i] != nums[nums[i]-1] means the num is not in the place where it should belong.
+            # Normally 0 1 2 3 4 5
+            #          1 2 3 4 5 6
+            # eg       3 4 -1 1
+            #          -1 4 3 1
+            #          -1 1 3 4
+            #          1 -1 3 4
+            # 1, 3, 4 is in the right place, -1 don't have to change
             while nums[i] > 0 and nums[i] <= len(nums) and nums[i] != nums[nums[i]-1]:
                 temp = nums[i]
                 nums[i] = nums[temp-1]
