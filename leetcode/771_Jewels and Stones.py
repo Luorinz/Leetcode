@@ -18,7 +18,8 @@
 # The characters in J are distinct.
 
 
-class Solution:
+class Solution1:
+    # O(m*n) O1 space
     def numJewelsInStones(self, J, S):
         """
         :type J: str
@@ -30,3 +31,15 @@ class Solution:
             if i in J:
                 count +=1
         return count
+    
+class Solution:
+    # O(m+n) time Om spacee
+    def numJewelsInStones(self, J, S):
+        s = set()
+        for i in J:
+            s.add(i)
+        res = 0
+        for i in S:
+            if i in s:
+                res += 1
+        return res
